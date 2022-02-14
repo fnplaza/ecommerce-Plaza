@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import CartWidget from "./CartWidget";
 
 function NavBar() {
   return (
@@ -36,7 +37,7 @@ function NavBar() {
                 </a>
               </li>
               <li className="nav-item">
-                <FaShoppingCart />
+                <CartWidget />
               </li>
               <li className="nav-item dropdown">
                 <a
