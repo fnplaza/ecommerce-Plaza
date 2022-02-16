@@ -1,9 +1,9 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ textoFooter }) => {
   return (
     <footer className="bg-dark text-light text-center">
-      <p>Facundo Nicolas 2022</p>
+      <p>{textoFooter ? textoFooter : "Footer"}</p>
     </footer>
   );
 };

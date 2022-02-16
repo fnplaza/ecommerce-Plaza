@@ -1,18 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
-import CartWidget from "./components/CartWidget";
-import ItemListContainer from "./components/ItemListContainer";
-import Footer from "./components/Footer";
+import NavBar from "./components/Navbar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import Footer from "./components/UI/Footer";
+import Rutas from "./routes";
+import Accordion from "./components/Accordion/Accordion";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <ItemListContainer textillo="ItemListContainer" />
-      <Footer />
-    </div>
+    <Main>
+      <Rutas />
+    </Main>
   );
 }
 
