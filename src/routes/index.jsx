@@ -6,11 +6,13 @@ import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/UI/Footer";
 import Button from "../components/UI/Button";
 import Accordion from "../components/Accordion/Accordion";
+import Cart from "../components/Cart/Cart";
 
 const Rutas = () => {
   return (
     <BrowserRouter>
       <NavBar textoDeNav={"HopeIndumentaria"} />
+      <Cart />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/checkout" element={<Checkout />} />
