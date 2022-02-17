@@ -1,18 +1,51 @@
-import React from "react";
+import React, { Component } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+
 const ItemCount = (props) => {
   const [contador, setContador] = useState(props.initial);
-  function onAdd() {
+  const onAdd = () => {
     setContador(contador + 1);
-  }
-  if (props.stock <= contador) {
-    return <h1>{contador}</h1>;
+    contador === props.stock && setContador(props.stock);
+  };
+  const onDown = () => {
+    setContador(contador - 1);
+    contador === props.initial && setContador(props.initial);
+  };
+  function addToCart() {
+    alert(`Se añadieron ${contador} items!`);
   }
   return (
-    <div>
-      <h1>{contador}</h1>
-      <button onClick={() => onAdd()}>+</button>
-      <button onClick={() => setContador(contador - 1)}>-</button>
+    <div className="contador">
+      <div className="divButtons">
+        <button
+          className="botonResta"
+          onClick={() => onDown()}
+          disabled={contador === props.initial ? true : false}
+        >
+          -
+        </button>
+        <span className="cantidadItems">
+          {props.stock === 0 ? props.stock : contador}
+        </span>
+        <button
+          className="botonSuma"
+          onClick={() => onAdd()}
+          disabled={contador === props.stock ? true : false}
+        >
+          +
+        </button>
+      </div>
+      <div>
+        <button
+          className="botonAddCart"
+          onClick={() => addToCart()}
+          disabled={props.stock === 0 ? true : false}
+          name="addCart"
+        >
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 };
