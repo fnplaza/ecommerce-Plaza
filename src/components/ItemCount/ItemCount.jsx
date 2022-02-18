@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 
 const ItemCount = (props) => {
   const [contador, setContador] = useState(props.initial);
+  /***********/
+  /*Funciones*/
+  /***********/
   const onAdd = () => {
     setContador(contador + 1);
     contador === props.stock && setContador(props.stock);
@@ -12,9 +14,9 @@ const ItemCount = (props) => {
     setContador(contador - 1);
     contador === props.initial && setContador(props.initial);
   };
-  function addToCart() {
+  const addToCart = () => {
     alert(`Se añadieron ${contador} items!`);
-  }
+  };
   return (
     <div className="contador">
       <div className="divButtons">
